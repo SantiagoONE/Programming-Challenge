@@ -1,3 +1,21 @@
+/*
+
+Dado un tablero que representa el juego buscaminas, devolver otro tablero que represente
+las minas al rededor de un punto seguro del tablero.
+
+. -> punto seguro
+* -> mina
+
+Ej:
+
+in:			out:
+	*...		 *100
+	....		 2210
+	..*.		 1*10
+	....		 1110
+	
+*/
+
 #include <bits/stdc++.h>
 //#define __test__
 #define __unlinkcout__
