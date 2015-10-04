@@ -31,10 +31,10 @@ template <class T, class U> inline T swap (T &a, U &b) { T tmp = a;  a = b; b = 
 
 int long_max(int n)
 {
-	int cont = 0;
-	while((++cont) and n > 1)	
-		n = (n & 1)? n*3 + 1 : n / 2;					
-	return cont;
+    int cont = 0;
+    while((++cont) and n > 1)	
+	n = (n & 1)? n*3 + 1 : n / 2;					
+    return cont;
 }
 
 int main()
