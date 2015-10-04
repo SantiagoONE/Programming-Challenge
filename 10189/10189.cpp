@@ -69,8 +69,8 @@ int main()
     			}	    			
     	//}
     	
-		//} output
-		if(cs != 0) cout << '\n';
+	//} output
+ 	if(cs != 0) cout << '\n';
     	cout << "Field #" << ++cs << ":\n";
     	for (i = 0; i < n; ++i)
     		cout << matriz[i] << '\n';
