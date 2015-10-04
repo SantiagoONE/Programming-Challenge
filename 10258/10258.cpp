@@ -1,9 +1,3 @@
-/*
-	UVA: 10258
-
-	Como funciona el concurso de ACM
-
- */
 #include <bits/stdc++.h>
 //#define __test__
 //#define __unlinkcout__
@@ -66,30 +60,30 @@ int main()
     {    	    	    	
     	while(getline(cin, line))
     	{     		
-    		if(line.empty())
-    			break;
-    		istringstream iss(line);
-    		iss >> c >> p >> t >> r;
-
-    		if(data.find(c) == data.end())
-				data[c] = new Cnt();
-
-			if(r == 'C')
+	    	if(line.empty())
+	    		break;
+	    	istringstream iss(line);
+	    	iss >> c >> p >> t >> r;
+	
+	    	if(data.find(c) == data.end())
+			data[c] = new Cnt();
+	
+		if(r == 'C')
+		{
+			if(data[c]->problems.test(p) == false)
 			{
-				if(data[c]->problems.test(p) == false)
-				{
-					data[c]->time += t + data[c]->errors[p] * 20;
-					data[c]->problems.set(p);
-				}
+				data[c]->time += t + data[c]->errors[p] * 20;
+				data[c]->problems.set(p);
 			}
-			else if(r == 'I')
-			{				
-				// si el concursante logra resolver el problema, al momento de 
-				// sumar el tiempo que le tomo llegar a la primera solucion, 
-				// se le añadirá 20 min por cada envio erroneo.
-				if(data[c]->problems.test(p) == false)
-					data[c]->errors[p]++;
-			}
+		}
+		else if(r == 'I')
+		{				
+			// si el concursante logra resolver el problema, al momento de 
+			// sumar el tiempo que le tomo llegar a la primera solucion, 
+			// se le añadirá 20 min por cada envio erroneo.
+			if(data[c]->problems.test(p) == false)
+				data[c]->errors[p]++;
+		}
     	}
 
     	arr_data = contest_vector(data.begin(), data.end());
