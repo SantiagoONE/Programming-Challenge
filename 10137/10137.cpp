@@ -1,3 +1,14 @@
+/*
+
+Dadas ciertas cantidades de dinero, tenemos que obtener la parte que necesitamos extraer e incluir, para que 
+de esta manera todas las cantidades sean semejantes.
+
+Obtener el promedio nos dará la cantidad objetivo para cada monto. Si la cantidad-i es mayor que el promedio
+entonces cantidad-i - promedio es parte del exceso (not_need). Si la cantidad-i es menor que el promedio
+entoces promedio - cantidad-i es parte de lo que falta para balancear los montos (need).
+
+*/
+
 #include <bits/stdc++.h>
 //#define __test__
 #define __unlinkcout__
