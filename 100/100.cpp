@@ -1,3 +1,16 @@
+/*
+
+Dado un número podemos generar una secuencia de números tal que si n es par se divide
+entre 2 a n y si es impar se multiplica por 3 y suma 1. Esto hasta que n sea 1.
+
+Ej:
+	22 -> 22, 11, 34, 17, 52, 26, ..., 1  => long_max(22) = 16 números generados
+
+input -> i j (rango entre 1 y 1000000 inclusive, OJO: no aclara que i < j)
+output -> El máximo long_max(n) entre i y j inclusive
+
+*/
+
 #include <bits/stdc++.h>
 //#define __test__
 #define __unlinkcout__
