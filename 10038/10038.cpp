@@ -3,7 +3,7 @@
   La secuencia saltarina es aquella secuencia de N números enteros tales que:
   
   - Las diferencias absolutas entre cada elemento y su predecesor (xi - xi-1) toman
-  todos los posibles valores entre 1 y n-1
+  todos los posibles valores entre 1 y N-1
   
   OJO:
   
