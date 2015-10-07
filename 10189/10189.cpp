@@ -1,7 +1,7 @@
 /*
 
 Dado un tablero que representa el juego buscaminas, devolver otro tablero que represente
-las minas al rededor de un punto seguro del tablero.
+las minas alrededor de un punto seguro del tablero.
 
 . -> punto seguro
 * -> mina
