@@ -1,5 +1,7 @@
 /*
 
+Recientemente descubrí que este problema clasico es "La conjetura de Collatz":
+
 Dado un número podemos generar una secuencia de números tal que si n es par se divide
 entre 2 a n y si es impar se multiplica por 3 y suma 1. Esto hasta que n sea 1.
 
