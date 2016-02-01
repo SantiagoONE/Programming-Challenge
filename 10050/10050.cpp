@@ -58,7 +58,8 @@ int main()
 
         for (int i = 0; i < p; ++i)
         {
-            for (int m = 1, s = h[i];  s <= n; s = h[i] * ++m){        
+            for (int s = h[i];  s <= n; s += h[i])
+            {
                 if(s % 7 and s % 7 != 6)  // no ser multiplo de 7 y no se debe cumplir que 6 + 7*x = s, x >= 0
                     days[i + 1].set(s);                
             }
