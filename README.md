@@ -1,5 +1,5 @@
-## UVA Problems Solved
-Repositorio dedicado para los problemas encontrados y resueltos del UVA Online Judge.
+## Programming Challenge
+Repositorio dedicado para los problemas encontrados y resueltos de diferentes jueces online. Tales como UVA, COJ, Live Archive, y muchos más.
 > Esta es la plantilla que uso para la mayoría de mis soluciones, por supuesto pueden usarla.  
 
 ```c++
