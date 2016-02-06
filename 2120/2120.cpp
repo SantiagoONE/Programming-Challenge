@@ -44,7 +44,7 @@ int main()
 	bool primero = true;
 	int x, y, cs = 1;
 	short lado, anillo, r, count;
-	Coord a, b, c, d, objetivo;
+	Coord a, b, c, d;
 	criba();	
 	while(cin >> x)	
 	{
@@ -58,7 +58,6 @@ int main()
 			lado = 2 * anillo + 1;
 			count = 0;			
 			
-			objetivo = make_pair(x, y);
 			a = make_pair(anillo, 1 - anillo);
 			b = make_pair(anillo - 1, a.second + (lado - 2)); 
 			c = make_pair(b.first - (lado - 2), b.second - 1); 
