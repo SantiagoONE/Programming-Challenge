@@ -41,7 +41,6 @@ int main()
         ios_base::sync_with_stdio(false);
     #endif
 
-	bool primero = true;
 	int x, y, cs = 1;
 	short lado, anillo, r, count;
 	Coord a, b, c, d;
@@ -73,9 +72,8 @@ int main()
 				count = abs(x - d.first) + (lado - 1) * 3;
 			r = (4 * (anillo - 1) * anillo) + count + 1;
 		}		
-		if(!primero) cout << '\n';		
+		if(cs > 1) cout << '\n';	
 		cout << "Case " << cs++ << ": The prime at location (" << x << "," << y << ") is " << primes[r] << ".\n";
-		primero = false;
 	}	
 	return 0;
 }
