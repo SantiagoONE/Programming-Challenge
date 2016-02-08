@@ -5,7 +5,7 @@
 #include <bits/stdc++.h>
 //#define __test__
 #define __unlinkcout__
-#define LIM 10000
+#define LIM 10001
 #define MAXPRIMES 1129
 
 using namespace std;
@@ -19,13 +19,13 @@ void criba()
 	int i, j;
 	memset(isprime, true, sizeof(isprime));
 	isprime[0] = isprime[1] = false;
-	for(i = 2; i < LIM; ++i)
+	for(i = 2; i*i <= LIM; ++i)
 	{
-		if(isprime[i])		
-			for(j = 2*i; j < LIM; j += i)			
+		if(isprime[i])	
+			for(j = 2*i; j <= LIM; j += i)			
 				isprime[j] = false;
 	}	
-	for(i = 2, j = 0; i < LIM; ++i)
+	for(i = 2, j = 0; i <= LIM; ++i)
 		if(isprime[i])
 			primes[j++] = i;
 }
