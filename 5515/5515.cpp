@@ -8,8 +8,6 @@
 
 using namespace std;
 
-typedef long long ll;
-
 //{ 19 meses, los 18 primeros tiene 20 dias y el último tiene solo 5. 
 //  Todos los dias son nombrados con números de 0 ... 19 o 0 ... 4 dependiendo del mes
 string haab[19] = {"pop", "no", "zip", "zotz", "tzec", "xul", "yoxkin", "mol", "chen", 
