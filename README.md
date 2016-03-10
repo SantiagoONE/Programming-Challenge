@@ -9,9 +9,6 @@ Repositorio dedicado para los problemas encontrados y resueltos de diferentes ju
 
 using namespace std;
 
-template <class T, class U> inline T max (T &a, U &b){ return a > b ? a : b; }
-template <class T, class U> inline T min (T &a, U &b){ return a < b ? a : b; }
-template <class T, class U> inline T swap (T &a, U &b){ T tmp = a; a = b; b = tmp; }
 //{ 4 Direction
 //const int dx[]={1,0,-1,0}; const int dy[]={0,1,0,-1}; 
 //}
