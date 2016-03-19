@@ -26,7 +26,7 @@ char dungeon[MAX][MAX][MAX];
 bool available[MAX][MAX][MAX];
 int L, R, C;
 
-int dfs(const Node &initial)
+int bfs(const Node &initial)
 {
 	queue<Node> Q;
 	Q.push(initial);
@@ -81,7 +81,7 @@ int main()
         			if(dungeon[k][i][j] == 'S')       			
         				initial = Node(k, i, j, 0);        			
         		}
-    	int r = dfs(initial);
+    	int r = bfs(initial);
     	if(r != -1)	cout << "Escaped in " << r << " minute(s).";
     	else cout << "Trapped!";
 		cout << endl;
