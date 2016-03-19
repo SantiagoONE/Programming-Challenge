@@ -23,9 +23,9 @@ int n;
 
 int findNode(int value)
 {
-	int index = 0;
-	for (set<ll>::iterator it = all.begin(); it != all.end(); ++it, ++index)
-		if(*it == value) return index;		
+	int i = 0;
+	for (set<ll>::iterator it = all.begin(); it != all.end(); ++it, ++i)
+		if(*it == value) return i;		
 	return -1;
 }
 
@@ -36,8 +36,8 @@ int bfs(ll origen, int ttl)
 		desde un origen y con un ttl (tiempo de vida) dado.
 	*/
 	int children, index, count = 0,
-	elementsInCurrentLevel = 1,
-	nextElementsInCurrentLevel = 0;
+	currentLvl = 1,
+	nextLvl = 0;
 
 	/*
 		# Si el nodo no esta dentro del grafo (index == -1) 
@@ -79,13 +79,13 @@ int bfs(ll origen, int ttl)
 			}
 			ady++;
 		} 
-		nextElementsInCurrentLevel += children;
-		if(--elementsInCurrentLevel == 0)
+		nextLvl += children;
+		if(--currentLvl == 0)
 		{
 			if (--ttl == 0)		
 				return count + 1;			
-      		elementsInCurrentLevel = nextElementsInCurrentLevel;
-      		nextElementsInCurrentLevel = 0;
+      		currentLvl = nextLvl;
+      		nextLvl = 0;
 		}
 	}	
 	return count + 1;
