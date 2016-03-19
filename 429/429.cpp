@@ -81,8 +81,7 @@ int main()
     	while(getline(cin, line) and line != "")
     	{
     		istringstream iss(line);
-    		iss >> start;
-    		iss >> goal;
+    		iss >> start >> goal;
     		memset(available, true, sizeof(available));
         	cout << start << ' ' << goal << ' ' << bfs(start , goal) << endl;
     	}	
