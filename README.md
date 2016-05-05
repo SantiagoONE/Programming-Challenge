@@ -25,6 +25,7 @@ int main()
     #ifdef __unlinkcout__
         cin.tie(0);
         ios_base::sync_with_stdio(false);
+        #define endl '\n'
     #endif
     /* code */
     return 0;
