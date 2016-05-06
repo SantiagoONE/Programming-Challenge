@@ -58,8 +58,6 @@ void dijkstra(int origen)
     {
         int nodoActual = Q.top().first;
         Q.pop();
-        if(visited[nodoActual])
-            continue;
         visited[nodoActual] = true;
         for(const auto &node : ady[nodoActual])
         {
