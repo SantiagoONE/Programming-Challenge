@@ -7,7 +7,7 @@
 using namespace std;
 
 //{ 4 Direction
-//const int dx[]={1,0,-1,0}; const int dy[]={0,1,0,-1}; 
+//const int dx[]={1,0,-1,0}; const int dy[]={0,1,0,-1};
 //}
 //{ 8 Direction
 //const int dx[]={1,1,0,-1,-1,-1,0,1}; const int dy[]={0,1,1,1,0,-1,-1,-1};
@@ -16,7 +16,7 @@ using namespace std;
 typedef pair<int, int> Node;
 
 struct cmp
-{   
+{
 	bool operator ()(const Node &a, const Node &b)
 	{
 		return a.second > b.second;
@@ -30,8 +30,8 @@ bool visited[MAX + 2];
 
 void reset()
 {
-	for (int i = 0; i < MAX + 2; ++i)	
-		ady[i].clear();	
+	for (int i = 0; i < MAX + 2; ++i)
+		ady[i].clear();
 }
 
 void init()
@@ -43,21 +43,23 @@ void init()
 
 string print(int goal)
 {
-    if(before[goal] == -1)   
+    if(before[goal] == -1)
         return to_string(goal);
     return print(before[goal]) + " " + to_string(goal);
 }
 
-void dijkstra(int origen)
+void dijkstra(int origen, int goal)
 {
     init();
-	MinHeap Q;
+	MinHeap H;
     range[origen] = 0;
-	Q.push(Node(origen, range[origen]));
-    while(not Q.empty())
+	H.push(Node(origen, range[origen]));
+    while(not H.empty())
     {
-        int nodoActual = Q.top().first;
-        Q.pop();
+        int nodoActual = H.top().first;
+        if(nodoActual == goal)
+            return;
+        H.pop();
         visited[nodoActual] = true;
         for(const auto &node : ady[nodoActual])
         {
@@ -67,7 +69,7 @@ void dijkstra(int origen)
             {
                 range[nodoAdyacente] = range[nodoActual] + costoAlAdyacente;
                 before[nodoAdyacente] = nodoActual;
-                Q.push(Node(nodoAdyacente, range[nodoAdyacente]));
+                H.push(Node(nodoAdyacente, range[nodoAdyacente]));
             }
         }
     }
@@ -77,14 +79,14 @@ int main()
 {
     #ifdef __test__
         freopen ("in341.txt", "r", stdin);
-        freopen ("out341.txt", "w", stdout);        
-    #endif 
+        freopen ("out341.txt", "w", stdout);
+    #endif
     #ifdef __unlinkcout__
         cin.tie(0);
         ios_base::sync_with_stdio(false);
         #define endl '\n'
     #endif
-   	
+
    	int NI, m, id, coste, origen, goal, cs = 1;;
 
    	while(cin >> NI and NI)
@@ -99,9 +101,9 @@ int main()
 	   	    }
    		}
    		cin >> origen >> goal;
-   		dijkstra(origen);
-   		cout << "Case " << cs++ << ": Path = " 
-   			 << print(goal) << "; " << range[goal] 
+   		dijkstra(origen, goal);
+   		cout << "Case " << cs++ << ": Path = "
+   			 << print(goal) << "; " << range[goal]
    			 << " second delay" << endl;
    		reset();
    	}
