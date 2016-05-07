@@ -42,7 +42,7 @@ void init(MinHeap &H, int start)
     H.push(Node(start, 0));
 }
 
-bool disjktra(int start, int goal)
+bool dijkstra(int start, int goal)
 {
 	MinHeap H;
 	init(H, start);    
@@ -92,7 +92,7 @@ int main()
     		ady[t].push_back(Node(s, w));
     	}
         cout << "Case #" << ++cs << ": ";
-    	if(disjktra(start, goal))       
+    	if(dijkstra(start, goal))       
             cout << range[goal] << endl;
         else 
             cout << "unreachable" << endl;
