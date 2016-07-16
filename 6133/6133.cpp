@@ -72,9 +72,7 @@ struct MyTrie
 					found = true;					
 					break;		
 				}				
-			if(not found and not prev->isOver) 
-				continue;
-			else 
+			if(found or prev->isOver)
 				counter++;
 		}
 		return counter;
